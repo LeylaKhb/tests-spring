@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_itis
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db-changelog.xml
+    url: jdbc:postgresql://localhost:5432/spring_itis
+    user: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+
+  freemarker:
+    template-loader-path: /WEB-INF/templates/
+    suffix: .ftl
+
+mail:
+  username: "ivlevv.ff@gmail.com"
+  password: "jvqfelrwaghsnbha"
+
