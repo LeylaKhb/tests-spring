@@ -1,5 +1,6 @@
 package itis.khabibullina.service;
 
+import itis.khabibullina.aspect.annotation.EmailLogging;
 import itis.khabibullina.config.MailConfig;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -31,7 +32,7 @@ public class EmailServices {
         this.password = mailConfig.getPassword();
     }
 
-
+    @EmailLogging
     public String sendEmail(String to) throws IOException, TemplateException {
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
@@ -76,7 +77,6 @@ public class EmailServices {
         for (int i = 0; i < 10; i++) {
             stringBuilder.append(symbols.charAt(random.nextInt(symbols.length())));
         }
-        System.out.println("pass " + stringBuilder.toString());
         return stringBuilder.toString();
     }
 }

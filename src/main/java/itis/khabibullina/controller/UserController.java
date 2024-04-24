@@ -1,5 +1,6 @@
 package itis.khabibullina.controller;
 
+import itis.khabibullina.aspect.annotation.NewUserLogging;
 import itis.khabibullina.dto.CreateUserRequestDto;
 import itis.khabibullina.dto.UserDto;
 import itis.khabibullina.service.UserService;
@@ -31,6 +32,7 @@ public class UserController {
     }
 
     @PostMapping("/user")
+    @NewUserLogging
     public String create(@ModelAttribute CreateUserRequestDto user) throws TemplateException, IOException {
         userService.create(user);
         return "sign_up_success";

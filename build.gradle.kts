@@ -50,7 +50,7 @@ dependencies {
     implementation("org.eclipse.angus:jakarta.mail:2.0.0")
     implementation("jakarta.activation:jakarta.activation-api:2.1.3")
 
-
+    implementation("org.springframework.boot:spring-boot-starter-aop")
 
 }
 configurations.all {     exclude(group = "org.eclipse.angus", module ="angus-activation") }
